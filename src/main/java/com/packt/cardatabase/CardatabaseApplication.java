@@ -38,7 +38,7 @@ public class CardatabaseApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// Add owner objects and save these to db
+
 		Owner owner1 = new Owner("John", "Johnson");
 		Owner owner2 = new Owner("Mary", "Robinson");
 		orepository.saveAll(Arrays.asList(owner1, owner2));
@@ -53,7 +53,7 @@ public class CardatabaseApplication implements CommandLineRunner {
 		// Username: admin, password: admin
 		urepository.save(new AppUser("admin", "$2a$10$8cjz47bjbR4Mn8GMg9IZx.vyjhLXR/SKKMSZ9.mP9vpMu0ssKi8GW", "ADMIN"));
 
-		// Fetch all cars and log to console
+
 		for (Car car : repository.findAll()) {
 			logger.info("brand: {}, model: {}", car.getBrand(), car.getModel());
 		}
